@@ -50,8 +50,11 @@ exports.onPostBuild = async ({ graphql }) => {
 
     // Collect the data for all earworms. This simply digs into the query result
     // and extracts the objects we care about.
+    const latestNoticeEdges = result.data.latestNotice.edges;
     const latestNoticeCreatedAt =
-      result.data.latestNotice.edges.first?.node.frontmatter.createdAt;
+      latestNoticeEdges.length > 0
+        ? latestNoticeEdges[0].node.frontmatter.createdAt
+        : null;
     const popups = result.data.popups.edges.map((edge) => edge.node);
 
     // If we don't already have the posts directory inside the public directory,
