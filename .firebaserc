@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "heektime"
+  },
+  "targets": {
+    "heektime": {
+      "hosting": {
+        "notice": [
+          "heektime-notice"
+        ]
+      }
+    }
+  }
+}

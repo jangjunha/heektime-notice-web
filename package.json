@@ -15,7 +15,8 @@
     "clean": "gatsby clean",
     "format": "prettier -w .",
     "lint": "eslint .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "ci": "yarn lint && yarn type-check"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",

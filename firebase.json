@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "heektime-notice",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
