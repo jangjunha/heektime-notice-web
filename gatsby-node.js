@@ -37,6 +37,7 @@ exports.onPostBuild = async ({ graphql }) => {
             slug
             frontmatter {
               title
+              popupVersionPattern
             }
           }
         }
@@ -67,8 +68,9 @@ exports.onPostBuild = async ({ graphql }) => {
         1: {
           latestNoticeCreatedAt: latestNoticeCreatedAt,
           popups: popups.map((node) => ({
-            slug: node.slug,
-            title: node.frontmatter?.title,
+            location: `/${node.slug}`,
+            title: node.frontmatter.title,
+            popupVersionPattern: node.frontmatter.popupVersionPattern,
           })),
         },
       })
