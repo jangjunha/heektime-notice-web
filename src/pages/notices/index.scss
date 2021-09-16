@@ -15,6 +15,7 @@
         var(--layout-horizontal-margin);
       background-color: var(--secondary-background-color);
       position: relative;
+      color: inherit;
 
       &:after {
         content: "〉";
