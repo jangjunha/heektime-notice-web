@@ -38,6 +38,7 @@ exports.onPostBuild = async ({ graphql }) => {
             frontmatter {
               title
               popupVersionPattern
+              popupShowAlways
             }
           }
         }
@@ -71,6 +72,7 @@ exports.onPostBuild = async ({ graphql }) => {
             location: `/${node.slug}`,
             title: node.frontmatter.title,
             popupVersionPattern: node.frontmatter.popupVersionPattern,
+            popupShowAlways: node.frontmatter.popupShowAlways || false,
           })),
         },
       })
