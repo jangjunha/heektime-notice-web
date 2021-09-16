@@ -9,6 +9,7 @@ module.exports = {
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
+    "gatsby-plugin-react-svg",
     "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-mdx",
