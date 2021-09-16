@@ -8,7 +8,7 @@ const IndexPage = (): React.ReactElement => {
     query NoticesQuery {
       notices: allMdx(
         filter: {
-          slug: { glob: "notices/*" }
+          slug: { glob: "notices/**/*" }
           frontmatter: { published: { eq: true } }
         }
         sort: { fields: frontmatter___createdAt, order: DESC }
