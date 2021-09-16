@@ -11,9 +11,16 @@ const AddToAppleWatchButton = ({
   href,
   className,
 }: AddToAppleWatchButtonProps): React.ReactElement => {
+  const isSSR = typeof window === "undefined";
   return (
     <div className={className}>
-      <a href={href}>{isDarkMode() ? <ImageDark /> : <ImageLight />}</a>
+      <a href={href}>
+        {!isSSR && (
+          <React.Suspense fallback={<div />}>
+            {isDarkMode() ? <ImageDark /> : <ImageLight />}
+          </React.Suspense>
+        )}
+      </a>
     </div>
   );
 };
