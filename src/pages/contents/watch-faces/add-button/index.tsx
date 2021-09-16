@@ -7,7 +7,7 @@ interface AddToAppleWatchButtonProps {
   className?: string;
 }
 
-export const AddToAppleWatchButton = ({
+const AddToAppleWatchButton = ({
   href,
   className,
 }: AddToAppleWatchButtonProps): React.ReactElement => {
@@ -18,5 +18,11 @@ export const AddToAppleWatchButton = ({
   );
 };
 
-const isDarkMode = (): boolean =>
-  window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+const isDarkMode = (): boolean => {
+  if (typeof window === "undefined") {
+    return false;
+  }
+  return window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+};
+
+export default AddToAppleWatchButton;
