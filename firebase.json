@@ -4,6 +4,13 @@
     "public": "public",
     "headers": [
       {
+	"source": "/status.json",
+	"headers": [{
+	  "key": "Cache-Control",
+	  "value": "no-cache, no-store, must-revalidate"
+	}]
+      },
+      {
 	"source": "**/*.watchface",
 	"headers": [{
 	  "key": "Content-Type",
