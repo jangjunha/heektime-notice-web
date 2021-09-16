@@ -1,0 +1,36 @@
+:root {
+  --layout-horizontal-margin: 32px;
+  --layout-vertical-margin: 64px;
+}
+
+body {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 768px;
+  margin: var(--layout-vertical-margin) 0;
+
+  > * {
+    margin-left: var(--layout-horizontal-margin);
+    margin-right: var(--layout-horizontal-margin);
+  }
+
+  p {
+    line-height: 180%;
+  }
+}
+
+footer {
+  color: var(--secondary-text-color);
+  text-align: center;
+  padding: 8px var(--layout-horizontal-margin) 32px;
+}
