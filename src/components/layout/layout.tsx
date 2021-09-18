@@ -1,4 +1,7 @@
+import { MDXProvider } from "@mdx-js/react";
+import { Link } from "gatsby";
 import React from "react";
+
 import "./layout.scss";
 
 const Layout = ({
@@ -6,13 +9,15 @@ const Layout = ({
 }: {
   children?: React.ReactNode;
 }): React.ReactElement => (
-  <div className="wrapper">
-    <main>{children}</main>
+  <MDXProvider components={{ Link }}>
+    <div className="wrapper">
+      <main>{children}</main>
 
-    <footer>
-      <p>ⓒ heek.kr</p>
-    </footer>
-  </div>
+      <footer>
+        <p>ⓒ heek.kr</p>
+      </footer>
+    </div>
+  </MDXProvider>
 );
 
 export default Layout;

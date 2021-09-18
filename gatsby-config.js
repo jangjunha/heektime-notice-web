@@ -1,7 +1,4 @@
 module.exports = {
-  flags: {
-    DEV_SSR: false,
-  },
   siteMetadata: {
     siteUrl: "https://notice.heektime.heek.kr",
     title: "heektime-notice-web",
@@ -15,8 +12,21 @@ module.exports = {
       resolve: "gatsby-plugin-mdx",
       options: {
         defaultLayouts: {
-          pages: require.resolve("./src/components/layout/layout.tsx"),
+          default: require.resolve("./src/components/layout/layout.tsx"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              quality: 80,
+              withWebp: { quality: 80 },
+              withAvif: { quality: 80 },
+              disableBgImageOnAlpha: true,
+              backgroundColor: "transparent",
+              srcSetBreakpoints: [340, 520, 890],
+            },
+          },
+        ],
       },
     },
     "gatsby-plugin-sharp",
